@@ -121,10 +121,36 @@ class LetObject(py_trees.behaviour.Behaviour):
         self.logger.debug("  %s [LetObject::terminate().terminate()][%s->%s]" %
                           (self.name, self.status, new_status))
 
-# TODO: Create any other required behavior like those to move the robot to a point, 
-#       add or check elements in the blackboard, ...
+class MoveRobot(py_trees.behaviour.Behaviour):
+    def __init__(self, name):
+        super(MoveRobot, self).__init__(name)
+        
+    def setup(self, timeout):
+        return super().setup(timeout)
+        # Publishers msgs
+        # Subscribers and call backs
+    
+    def initialise(self):
+        return super().initialise()
+        # Planning
+    
+    def update(self):
+        return super().update()
+        # checking goal reached or not
+    
+    def terminate(self, new_status):
+        return super().terminate(new_status)
+    
+    # def callbacks for subscribers
 
 
+
+def create_tree():
+    pass
+
+
+def run():
+    pass
 
 
 if __name__ == "__main__":
@@ -135,5 +161,14 @@ if __name__ == "__main__":
     check_object = CheckObject("check_object")
     get_object = GetObject("get_object")
     let_object = LetObject("let_object")
-    # fill the rest of the code here ...
+    move_robot= MoveRobot("move_robot")
+    
+    create_tree()
+    
+    run()
+    
+    
+
+    
+    
  
